@@ -24,7 +24,9 @@
                 <!-- tab  -->
                 <span :class='["tab",{good:topic.good},{top:topic.top}]'>{{topic|correctTab}}</span>
                 <!-- title  -->
-                <span>{{topic.title}}</span>
+                <router-link :to="{ name: 'myArticle', params: { id: topic.id }}">
+                    <span class=mytitle>{{topic.title}}</span>
+                </router-link>   
                 <!-- time  -->
                 <span class='lasttime'>{{topic.last_reply_at|formatTime}}</span>
             </li>
@@ -76,7 +78,7 @@ export default {
 <style scoped lang="scss">
 .content-wrapper{
     background: rgb(225,225,225);
-    width: 100vw;
+    
     padding-top:15px;
 }
 .post-list{
@@ -104,6 +106,13 @@ export default {
             display: inline-block;
             vertical-align: middle;
         }
+        .mytitle:hover{
+            text-decoration:underline;
+            cursor: pointer;
+        }
+    }
+    >li:hover{
+        background: rgb(246,246,246);
     }
     .top-menu-wrapper{
         background: rgb(246,246,246);
@@ -152,7 +161,6 @@ img{
     width: 32px;
     font-size: 12px;
     border-radius:3px;
-    background:#80bd01;
     color:#999;
     background: #e5e5e5;
     text-align: center;
