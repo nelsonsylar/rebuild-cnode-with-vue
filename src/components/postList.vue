@@ -115,7 +115,8 @@ export default {
         height:50px;
         border-bottom: 1px solid rgb(225,225,225);
         line-height:50px; 
-        
+        white-space: nowrap;
+        overflow: hidden;
         span{
             display: inline-block;
             vertical-align: middle;
@@ -142,6 +143,7 @@ export default {
             line-height: 24px;
             height:24px;
             padding:0 4px;
+            
         }
         li.active{
             color:white;
