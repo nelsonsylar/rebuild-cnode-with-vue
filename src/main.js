@@ -28,6 +28,13 @@ function translate(value){
   }
   
 }
+Vue.filter('changePicSize',function(value){
+  var cArr = value.match(/[^\x00-\xff]/ig); 
+  let imgArray=[]
+  if(value){
+    
+  }
+})
 Vue.filter('correctTab', function (value) {
   if(value.top&&value.good){
     return '置顶'
@@ -72,6 +79,8 @@ Vue.filter('subString',(value)=>{
   var temp=value.length + (cArr == null ? 0 : cArr.length); 
 if(value&&temp>24){
   return value.slice(0,24)+'...'
+}else{
+  return value
 }
 })
 

@@ -14,7 +14,7 @@
                     <li>客户端测试</li>
                 </ul>
             </li>
-            <li class='titles' v-for='topic in topics'>
+            <li v-for='topic in topics'>
                 <!-- avatar --> 
                 <router-link :to="{name:'userInfo',params:{id:topic.author.loginname}}"><span class='avatar'><img :src='topic.author.avatar_url' alt=""></span></router-link>
                 <!-- reply num -->
@@ -30,6 +30,9 @@
                 <!-- time  -->
                 <span class='lasttime'>{{topic.last_reply_at|formatTime}}</span>
             </li>
+            <li class=select-bar>
+                <selectBar v-on:handle='changePages'></selectBar>
+            </li>
         </ul>
     </div>
   </div>
@@ -38,6 +41,7 @@
 </template>
 
 <script>
+import selectBar from './selectBar'
 export default {
   name: 'postList',
   data () {
@@ -45,15 +49,19 @@ export default {
       topics:[],
       topMenu:['全部', '精华' ,'分享' ,'问答' ,'招聘' ,'客户端测试'],
       nowTab:'',
-      topTab:'全部'
+      topTab:'全部',
+      nowPage:1
     }
+  },
+  components:{
+    selectBar
   },
   methods:{
         getData(){
             this.$http.get('https://cnodejs.org/api/v1/topics',
             {
                 params:{
-                    page:1,
+                    page:this.nowPage,
                     limit:20
                 }
             }
@@ -62,6 +70,10 @@ export default {
             }).catch((err)=>{
                 console.log(err)
             })
+        },
+        changePages(value){
+            this.nowPage=value
+            this.getData()
         },
         selectTab(){
 
@@ -77,7 +89,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .content-wrapper{
-    background: rgb(225,225,225);
+    
     padding-top:15px;
 }
 .post-list{
@@ -95,6 +107,8 @@ export default {
     
 }
 .all-menu{
+    padding-bottom: 30px;
+    
     >li{
         width:100%;
         height:50px;
@@ -110,7 +124,7 @@ export default {
             cursor: pointer;
         }
     }
-    >li:hover{
+    >li:not(.select-bar):hover{
         background: rgb(246,246,246);
     }
     .top-menu-wrapper{
@@ -178,4 +192,9 @@ img{
     float:right;
     padding-right:20px;
 }
+.select-bar{
+    height:80px;
+    
+}
+
 </style>

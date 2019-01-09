@@ -3,8 +3,11 @@
         <div class="author-info">
             <div class="header">作者</div>
             <div class=avatarAndName>
-                <div class=aAndi><span><img :src="authorData.avatar_url" alt="" style='width:30px;height:30px'></span>
-                <span>{{authorData.loginname}}</span></div>
+                <router-link :to="{name:'userInfo',params:{id:authorData.loginname}}">
+                    <div class=aAndi><span><img :src="authorData.avatar_url" alt="" style='width:30px;height:30px'></span>
+                    <span>{{authorData.loginname}}</span></div>
+                </router-link>
+                
                 <div style='margin-left:10px;'>积分:{{authorData.score}}</div>
             </div>
         </div>
