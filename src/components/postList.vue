@@ -6,12 +6,13 @@
         <ul class=all-menu>    
             <li class=top-menu-wrapper>
                 <ul class=top-menu>
-                    <li class=active>全部</li>
-                    <li>精华</li>
-                    <li>分享</li>
-                    <li>问答</li>
-                    <li>招聘</li>
-                    <li>客户端测试</li>
+                    
+                    <li class=active><a href="#">全部</a></li>
+                    <li><a href="#">精华</a></li>
+                    <li><a href="#">分享</a></li>
+                    <li><a href="#">问答</a></li>
+                    <li><a href="#">招聘</a></li>
+                    <li><a href="#">客户端测试</a></li>
                 </ul>
             </li>
             <li v-for='topic in topics'>
@@ -89,11 +90,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .content-wrapper{
-    
+    width: 99%;
+    padding-bottom:40px;
     padding-top:15px;
 }
 .post-list{
-    width:1400px;
+    width: calc(75% - 10px);
     margin:0 auto;
     border-radius: 5px;
     background: #fff;
@@ -107,7 +109,6 @@ export default {
     
 }
 .all-menu{
-    padding-bottom: 30px;
     
     >li{
         width:100%;

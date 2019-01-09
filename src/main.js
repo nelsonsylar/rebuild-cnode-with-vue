@@ -77,8 +77,8 @@ Vue.filter('formatTime', function (value) {
 Vue.filter('subString',(value)=>{
   var cArr = value.match(/[^\x00-\xff]/ig);  
   var temp=value.length + (cArr == null ? 0 : cArr.length); 
-if(value&&temp>24){
-  return value.slice(0,24)+'...'
+if(value&&temp>18){
+  return value.slice(0,18)+'...'
 }else{
   return value
 }

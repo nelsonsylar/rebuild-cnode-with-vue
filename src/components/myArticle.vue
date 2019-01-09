@@ -82,9 +82,8 @@ export default {
 
 <style lang="scss" scoped>
 .content-wrapper{
-   width:1100px;
+   width:calc(68% - 10px);;
    margin:15px auto;
-   margin-left:230px;
    border-radius:3px;
 }
 .user-art{
@@ -135,6 +134,7 @@ export default {
         li{
             color:#838383;
             font-size: 12px;
+            white-space: nowrap;
         }
     }
 }

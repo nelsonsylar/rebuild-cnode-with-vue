@@ -7,8 +7,8 @@
       </router-link>
     </div>
     <div class="top-nav-menu">
-      <ul>
-        <li v-for='select in selects'>{{select}}</li>
+      <ul>  
+        <li v-for='select in selects'><a href="#">{{select}}</a></li>
       </ul>
     </div>
   </div>
@@ -42,13 +42,15 @@ img{
 .top-nav-logo{
   width: 160px;
   height:40px;
-  margin:auto 240px;
+  margin:auto 0;
+  margin-left:10%;
   padding-top: 3px;
   align-items: center;
 }
 .top-nav-menu{
   align-items:center;
-  margin:auto 242px;
+  margin:auto 0;
+  margin-right:8%;
 }
 ul{
   display: flex;

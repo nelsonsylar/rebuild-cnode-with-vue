@@ -22,7 +22,8 @@ export default {
 
 <style lang="scss">
 #app{
-  width: 99vw;
+  width: 99.3vw;
+  min-width:70%;
   min-height:95vh;
   background: rgb(225,225,225);
   position: relative;

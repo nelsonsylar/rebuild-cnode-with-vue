@@ -66,7 +66,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .content-wrapper{
-   width:1100px;
+   width: calc(65% - 10px);
    margin:15px auto;
    margin-left:230px;
    border-radius:3px;
@@ -100,6 +100,7 @@ export default {
         margin-left:-10px;
         margin-right:-10px;
         padding:10px;
+        white-space: nowrap;
         .enable-right{
             float: right;
             font-size:14px;

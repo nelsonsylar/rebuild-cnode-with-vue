@@ -60,11 +60,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .content-wrapper{
-    width:287px;
+    width:calc(15% - 10px);
     border-radius:6px;
     float: right;
     padding-top:15px;
-    margin-right:160px;
+    margin-right:1%;
 }
 .author-info,.author-topics,.author-replies{
     width:100%;

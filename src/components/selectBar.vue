@@ -36,14 +36,11 @@ export default {
                 this.buttons.pop()
                 this.buttons.splice(0,0,this.buttons[0]-1)
             }
-            this.$emit('handle',this.nowButton)
-            }
-            
             //发送数据到potlistvue上
+            this.$emit('handle',this.nowButton)
+            }   
         },
-
     }
-
 </script>
 
 <style lang="scss" scoped>
