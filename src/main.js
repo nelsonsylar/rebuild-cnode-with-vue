@@ -4,13 +4,7 @@ import router from './router'
 import axios from 'axios'
 Vue.prototype.$http=axios
 Vue.config.productionTip = false
-
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  render: h => h(App)
-})
+//filters and functions
 function translate(value){
   switch (value){
     case 'share' :
@@ -72,4 +66,30 @@ Vue.filter('formatTime', function (value) {
     return `${temp}年前`
   }
   
+})
+Vue.filter('subString',(value)=>{
+  var cArr = value.match(/[^\x00-\xff]/ig);  
+  var temp=value.length + (cArr == null ? 0 : cArr.length); 
+if(value&&temp>24){
+  return value.slice(0,24)+'...'
+}
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  render: h => h(App)
 })

@@ -51,7 +51,7 @@ export default {
             this.$http.get(`https://cnodejs.org/api/v1/user/${this.$route.params.id}`)
             .then((res)=>{
                 this.userData=res.data.data
-                console.log(res.data.data)
+                
             })
             .catch((err=>{
                 console.log(err)

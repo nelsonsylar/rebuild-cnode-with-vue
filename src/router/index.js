@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import postList from '@/components/postList'
 import myArticle from '@/components/myArticle'
 import userInfo from '@/components/userInfo'
-
+import sideBar from '@/components/sideBar'
 Vue.use(Router)
 
 export default new Router({
@@ -16,10 +16,11 @@ export default new Router({
       }
     },
     {
-      path: '/myArticle/:id',
+      path: '/myArticle/:id&name=:name',
       name: 'myArticle',
       components: {
-        main:myArticle
+        main:myArticle,
+        side:sideBar
       }
     },
     {

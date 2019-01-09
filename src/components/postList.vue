@@ -24,7 +24,7 @@
                 <!-- tab  -->
                 <span :class='["tab",{good:topic.good},{top:topic.top}]'>{{topic|correctTab}}</span>
                 <!-- title  -->
-                <router-link :to="{ name: 'myArticle', params: { id: topic.id }}">
+                <router-link :to="{ name: 'myArticle', params: { id: topic.id,name:topic.author.loginname }}">
                     <span class=mytitle>{{topic.title}}</span>
                 </router-link>   
                 <!-- time  -->

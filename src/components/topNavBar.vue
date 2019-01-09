@@ -1,7 +1,10 @@
 <template>
   <div class="top-nav-bar">
     <div class="top-nav-logo">
+      <router-link :to="{name:'postList'}">
       <img src="../assets/cnodejs_light.svg" alt="">
+
+      </router-link>
     </div>
     <div class="top-nav-menu">
       <ul>

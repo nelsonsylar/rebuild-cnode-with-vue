@@ -60,7 +60,7 @@ export default {
         getArtData(){
             this.$http.get(`https://cnodejs.org/api/v1/topic/${this.$route.params.id}`)
             .then((res)=>{
-                console.log(res.data.data)
+                
                 this.articleData=res.data.data
             })
             .catch((err)=>{
@@ -71,6 +71,11 @@ export default {
     beforeMount(){
         if(this.$route.params.id){this.getArtData()}
         else{}
+    },
+    watch:{
+        '$route'(to,from){
+            this.getArtData()
+        }
     }
 }
 </script>
@@ -85,6 +90,7 @@ export default {
 .user-art{
     background: white;
     border-radius: 3px;
+    overflow: auto;
 }
 .title-data{
     border-bottom:1px solid rgb(225,225,225);
@@ -93,6 +99,7 @@ export default {
     padding:10px;
 }
 .real-title{
+    white-space: nowrap;
     font-size: 22px;
     font-weight: 700;
     margin: 8px 0;
@@ -151,7 +158,7 @@ img{
     width:10px;
 }
 .content-area{
-    overflow:auto;
+    overflow:hidden;
      .replyUser{
             margin-left:10px;
             width: 30px;

@@ -18,6 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 #bottomBar{
+    
     width:99vw;
     height:185px;
     background: #fff;
