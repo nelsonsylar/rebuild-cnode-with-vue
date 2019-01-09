@@ -43,6 +43,9 @@ Vue.filter('correctTab', function (value) {
     return translate(value.tab)
   }
 })
+router.afterEach((to,from,next) => {
+  window.scrollTo(0,0);
+})
 Vue.filter('formatTime', function (value) {
   let lastTime=new Date(value).getTime()
   let timeobj =new Date()

@@ -15,8 +15,8 @@
                 </ul>
             </li>
             <li class='titles' v-for='topic in topics'>
-                <!-- avatar -->
-                <span class='avatar'><img :src='topic.author.avatar_url' alt=""></span>
+                <!-- avatar --> 
+                <router-link :to="{name:'userInfo',params:{id:topic.author.loginname}}"><span class='avatar'><img :src='topic.author.avatar_url' alt=""></span></router-link>
                 <!-- reply num -->
                 <span class='reply'>{{topic.reply_count}}/</span>
                 <!-- view num -->
@@ -78,7 +78,6 @@ export default {
 <style scoped lang="scss">
 .content-wrapper{
     background: rgb(225,225,225);
-    
     padding-top:15px;
 }
 .post-list{

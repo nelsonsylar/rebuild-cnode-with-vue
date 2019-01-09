@@ -53,5 +53,6 @@ ul{
 li{
   margin-left: 30px;
   font-size: 13px;
+  white-space: nowrap;
 }
 </style>
